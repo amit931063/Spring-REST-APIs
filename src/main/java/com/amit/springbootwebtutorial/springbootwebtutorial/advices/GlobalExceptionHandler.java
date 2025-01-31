@@ -32,7 +32,7 @@ public class GlobalExceptionHandler {
 
            ApiError apiError = ApiError.builder()
            .status(HttpStatus.BAD_REQUEST)
-             .message("input validation failed")
+             .message("input validation failed")                            
             .suberror(errors)
 
             .build();
@@ -41,4 +41,5 @@ public class GlobalExceptionHandler {
     private ResponseEntity<ApiResponse<?>> buildErrorResponseEntitty(ApiError apiError) {
         return  new ResponseEntity<>(new ApiResponse<>(apiError),apiError.getStatus());
     }
+    // this is the file for handle global exception  //
 }
